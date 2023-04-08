@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:antdesign_icons/antdesign_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -36,37 +35,37 @@ class Video extends StatelessWidget {
             'https://images.unsplash.com/photo-1680664777916-0e4735183619?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80',
         category: 'Programming',
         title: 'Python and Django for Beginners',
-        detail: 'A free python course for Beginners',
+        detail: 'A free python course for Beginners & a desciption sample too',
         tutor: 'Cipher School'),
     VideoComponents(
         banner:
             'https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80',
         category: 'App Development',
         title: 'App Development with Flutter',
-        detail: 'A free python course for Beginners',
+        detail: 'A free python course for Beginners & a desciption sample too',
         tutor: 'Aditya Thakur'),
     VideoComponents(
         banner:
             'https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
         category: 'Assignment Test',
         title: 'Free Mock IELTS',
-        detail: 'A free python course for Beginners',
+        detail: 'A free python course for Beginners & a desciption sample too',
         tutor: 'Languify'),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-      child: Column(
-        children: [
-          Row(
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 'Recommended Courses',
                 style:
-                    style.copyWith(fontSize: 15, fontWeight: FontWeight.bold),
+                    style.copyWith(fontSize: 17, fontWeight: FontWeight.bold),
               ),
               Material(
                 color: appBarC,
@@ -79,8 +78,8 @@ class Video extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Padding(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 15),
                     child: Row(
                       children: [
                         Text(
@@ -102,23 +101,26 @@ class Video extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20.0),
             child: Row(
               children: List.generate(
                   vidList.length,
                   (index) => Padding(
-                        padding: const EdgeInsets.only(right: 20, bottom: 20),
+                        padding: const EdgeInsets.only(right: 20, bottom: 30),
                         child: Material(
                           color: appBarC,
                           borderRadius: BorderRadius.circular(10),
                           elevation: 15,
                           shadowColor: appBarC.withOpacity(0.5),
                           child: Container(
-                            height: 250,
+                            height: 255,
                             width: 200,
                             decoration: BoxDecoration(
                               color: appBarC,
@@ -140,7 +142,7 @@ class Video extends StatelessWidget {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
+                                    padding: const EdgeInsets.all(15.0),
                                     child: SingleChildScrollView(
                                       child: Column(
                                         crossAxisAlignment:
@@ -168,13 +170,9 @@ class Video extends StatelessWidget {
                                             height: 5,
                                           ),
                                           Text(
-                                            vidList[index].title.length < 10
-                                                ? vidList[index].title
-                                                : '${vidList[index].title}...',
-                                            maxLines:
-                                                vidList[index].title.length > 10
-                                                    ? 1
-                                                    : null,
+                                            vidList[index].title,
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
                                             style: style.copyWith(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 17),
@@ -184,14 +182,18 @@ class Video extends StatelessWidget {
                                           ),
                                           Text(
                                             vidList[index].detail,
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
                                             style: style,
                                           ),
                                           const SizedBox(
-                                            height: 5,
+                                            height: 15,
                                           ),
                                           Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
                                             children: [
                                               CircleAvatar(
                                                 backgroundColor: iconColor,
@@ -217,9 +219,9 @@ class Video extends StatelessWidget {
                         ),
                       )),
             ),
-          )
-        ],
-      ),
+          ),
+        ),
+      ],
     );
   }
 }

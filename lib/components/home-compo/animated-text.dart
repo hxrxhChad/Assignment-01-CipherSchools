@@ -19,7 +19,7 @@ class AnimatedTextWidget extends StatelessWidget {
           curve: Curves.linear,
           textAlign: TextAlign.end,
           speed: const Duration(milliseconds: 80),
-          textStyle: style.copyWith(fontSize: 18, color: primaryColor))
+          textStyle: style.copyWith(fontSize: 20, color: primaryColor))
     ]);
   }
 }

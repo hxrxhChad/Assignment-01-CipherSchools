@@ -180,6 +180,7 @@ class _HeadSliderState extends State<HeadSlider> {
                                     children: [
                                       Text(
                                         clist[index].slogan,
+                                        textAlign: TextAlign.end,
                                         style: widget.style.copyWith(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
@@ -198,11 +199,11 @@ class _HeadSliderState extends State<HeadSlider> {
                             right: 0,
                             child: Container(
                               height: 250,
-                              width: 300,
+                              width: 150,
                               decoration: const BoxDecoration(
                                   gradient: LinearGradient(
                                       colors: [
-                                    Color.fromARGB(252, 0, 0, 0),
+                                    Color.fromARGB(150, 0, 0, 0),
                                     Color.fromARGB(0, 0, 0, 0),
                                   ],
                                       begin: Alignment.centerRight,
@@ -241,7 +242,7 @@ class _HeadSliderState extends State<HeadSlider> {
                                   shape: BoxShape.circle,
                                   color: index == current
                                       ? primaryColor
-                                      : appBarColor),
+                                      : whiteBg),
                             ),
                           )))),
         ],

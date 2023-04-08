@@ -97,11 +97,11 @@ class Slide extends StatelessWidget {
               bottom: 0,
               left: 0,
               child: Container(
-                height: 200,
-                width: 200,
+                height: 100,
+                width: 100,
                 decoration: const BoxDecoration(
                     gradient: LinearGradient(colors: [
-                  Color.fromARGB(253, 255, 255, 255),
+                  Color.fromARGB(132, 255, 255, 255),
                   Color.fromARGB(0, 255, 255, 255),
                 ], begin: Alignment.centerLeft, end: Alignment.center)),
               )),
@@ -110,11 +110,11 @@ class Slide extends StatelessWidget {
               bottom: 0,
               right: 0,
               child: Container(
-                height: 200,
-                width: 200,
+                height: 100,
+                width: 100,
                 decoration: const BoxDecoration(
                     gradient: LinearGradient(colors: [
-                  Color.fromARGB(253, 255, 255, 255),
+                  Color.fromARGB(107, 255, 255, 255),
                   Color.fromARGB(0, 255, 255, 255),
                 ], begin: Alignment.centerRight, end: Alignment.center)),
               )),
